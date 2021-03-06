@@ -15,5 +15,7 @@ namespace VismaE2interRPWDWEDN.Data
         }
 
         public DbSet<VismaE2interRPWDWEDN.Models.Ansatt> Ansatt { get; set; }
+
+        public DbSet<VismaE2interRPWDWEDN.Models.Stilling> Stilling { get; set; }
     }
 }
