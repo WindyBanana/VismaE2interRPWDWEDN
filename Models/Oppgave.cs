@@ -13,5 +13,7 @@ namespace VismaE2interRPWDWEDN.Models
         [Column(TypeName = "Date")]
         public DateTime OppgaveDato { get; set; }
 
+        public string Stilling { get; set; }
+        public string Ansatt { get; set; }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VismaE2interRPWDWEDN.Data;
 
 namespace VismaE2interRPWDWEDN.Migrations
 {
     [DbContext(typeof(VismaE2interRPWDWEDNContext))]
-    partial class VismaE2interRPWDWEDNContextModelSnapshot : ModelSnapshot
+    [Migration("20210306224757_AnsattOppdatering")]
+    partial class AnsattOppdatering
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

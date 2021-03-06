@@ -11,12 +11,12 @@ namespace VismaE2interRPWDWEDN.Models
         public int ID { get; set; }
         public string Name {get; set; }
 
-
         [Column(TypeName = "Date")]
         public DateTime PositionStartDate { get; set; }
 
         [Column(TypeName = "Date")]
         public DateTime PositionEndDate { get; set; }
+        public string Ansatt { get; set; }
 
 
 }
