@@ -21,12 +21,12 @@ namespace VismaE2interRPWDWEDN.Pages.Ansatte
 
         public IList<Ansatt> Ansatt { get;set; }
 
-       // public IList<Stilling> Stilling { get; set; }
+
 
         public async Task OnGetAsync()
         {
             Ansatt = await _context.Ansatt.ToListAsync();
-        //    Stilling = await _context.Stilling.ToListAsync();
+
         }
     }
 }

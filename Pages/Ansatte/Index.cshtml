@@ -26,6 +26,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Ansatt[0].Stilling)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ansatt[0].Oppgave)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -37,6 +40,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Stilling)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oppgave)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Rediger</a> |
