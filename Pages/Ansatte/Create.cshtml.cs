@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using VismaE2interRPWDWEDN.Data;
 using VismaE2interRPWDWEDN.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace VismaE2interRPWDWEDN.Pages.Ansatte
 {
@@ -19,13 +20,20 @@ namespace VismaE2interRPWDWEDN.Pages.Ansatte
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
+            IQueryable<string> stillingQuery = from s in _context.Stilling
+                                               orderby s.Name
+                                               select s.Name;
+            Stillinger = new SelectList(await stillingQuery.ToListAsync());
+            
             return Page();
         }
 
         [BindProperty]
         public Ansatt Ansatt { get; set; }
+
+        public SelectList Stillinger { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.

@@ -9,6 +9,6 @@ namespace VismaE2interRPWDWEDN.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        
+        public string Stilling { get; set; }
     }
 }
