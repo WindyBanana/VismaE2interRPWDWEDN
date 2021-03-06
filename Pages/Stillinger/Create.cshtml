@@ -1,0 +1,54 @@
+﻿@page
+@model VismaE2interRPWDWEDN.Pages.Stillinger.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Stilling</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Stilling.Name" class="control-label"></label>
+                <input asp-for="Stilling.Name" class="form-control" />
+                <span asp-validation-for="Stilling.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Stilling.PositionStartDate" class="control-label"></label>
+                <input asp-for="Stilling.PositionStartDate" class="form-control" />
+                <span asp-validation-for="Stilling.PositionStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Stilling.PositionEndDate" class="control-label"></label>
+                <input asp-for="Stilling.PositionEndDate" class="form-control" />
+                <span asp-validation-for="Stilling.PositionEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Legg til stillingen" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Tilbake til stillingsoversikten List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>
