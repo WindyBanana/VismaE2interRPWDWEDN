@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace VismaE2interRPWDWEDN.Models
 {
@@ -10,7 +10,7 @@ namespace VismaE2interRPWDWEDN.Models
     {
         public int ID { get; set; }
         public string Oppgavetittel { get; set; }
-        [Column(TypeName = "Date")]
+        [DataType(DataType.Date)]
         public DateTime OppgaveDato { get; set; }
 
         public string Stilling { get; set; }
