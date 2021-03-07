@@ -16,7 +16,7 @@ namespace VismaE2interRPWDWEDN.Models
 
         [DataType(DataType.Date)]
         public DateTime PositionEndDate { get; set; }
-        public string Ansatt { get; set; }
+        //public string Ansatt { get; set; }
 
 
 }
