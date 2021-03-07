@@ -10,8 +10,8 @@ using VismaE2interRPWDWEDN.Data;
 namespace VismaE2interRPWDWEDN.Migrations
 {
     [DbContext(typeof(VismaE2interRPWDWEDNContext))]
-    [Migration("20210306220114_Oppgaver")]
-    partial class Oppgaver
+    [Migration("20210307092133_kobleAnsattOgOppgave")]
+    partial class kobleAnsattOgOppgave
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,6 +31,18 @@ namespace VismaE2interRPWDWEDN.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Oppgave")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PositionEndDate")
+                        .HasColumnType("Date");
+
+                    b.Property<DateTime>("PositionStartDate")
+                        .HasColumnType("Date");
+
+                    b.Property<string>("Stilling")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ID");
 
                     b.ToTable("Ansatt");
@@ -43,10 +55,16 @@ namespace VismaE2interRPWDWEDN.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Ansatt")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("OppgaveDato")
                         .HasColumnType("Date");
 
                     b.Property<string>("Oppgavetittel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Stilling")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -60,6 +78,9 @@ namespace VismaE2interRPWDWEDN.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Ansatt")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");

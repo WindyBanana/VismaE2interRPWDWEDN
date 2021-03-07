@@ -27,15 +27,27 @@
                 <input asp-for="Ansatt.Name" class="form-control" />
                 <span asp-validation-for="Ansatt.Name" class="text-danger"></span>
             </div>
+            <div>
+                <label asp-for="Ansatt.Stilling" class="control-label"></label>
+                <select asp-for="Ansatt.Stilling" asp-items="Model.Stillinger">
+                    <option value="">  </option>
+                </select>
+            </div>
+            <div>
+                <label asp-for="Ansatt.Oppgave" class="control-label"></label>
+                <select asp-for="Ansatt.Oppgave" asp-items="Model.Oppgaver">
+                    <option value="">  </option>
+                </select>
+            </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Lagre endringer" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Tilbake til ansattoversikten</a>
 </div>
 
 @section Scripts {

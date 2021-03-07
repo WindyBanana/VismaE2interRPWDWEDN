@@ -15,21 +15,46 @@
 </head>
 <body>
 
-<div>
-    <h4>Ansatt</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ansatt.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Ansatt.Name)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Ansatt.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+    <div>
+        <h4>Ansatt</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ansatt.ID)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ansatt.ID)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ansatt.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ansatt.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ansatt.Stilling)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ansatt.Stilling)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ansatt.PositionStartDate)
+            </dt>
+            <dt class="col-sm-10">
+                @Html.DisplayFor(model => model.Ansatt.PositionStartDate)
+            </dt>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ansatt.PositionEndDate)
+            </dt>
+            <dt class="col-sm-10">
+                @Html.DisplayFor(model => model.Ansatt.PositionEndDate)
+            </dt>
+
+        </dl>
+    </div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Ansatt.ID">Rediger</a> |
+        <a asp-page="./Index">Tilbake til ansattoversikten</a>
+    </div>
 </body>
 </html>
