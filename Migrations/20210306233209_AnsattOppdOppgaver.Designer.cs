@@ -10,8 +10,8 @@ using VismaE2interRPWDWEDN.Data;
 namespace VismaE2interRPWDWEDN.Migrations
 {
     [DbContext(typeof(VismaE2interRPWDWEDNContext))]
-    [Migration("20210307084651_Initilal")]
-    partial class Initilal
+    [Migration("20210306233209_AnsattOppdOppgaver")]
+    partial class AnsattOppdOppgaver
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,12 +33,6 @@ namespace VismaE2interRPWDWEDN.Migrations
 
                     b.Property<string>("Oppgave")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("PositionEndDate")
-                        .HasColumnType("Date");
-
-                    b.Property<DateTime>("PositionStartDate")
-                        .HasColumnType("Date");
 
                     b.Property<string>("Stilling")
                         .HasColumnType("nvarchar(max)");

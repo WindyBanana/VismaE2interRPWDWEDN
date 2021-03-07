@@ -20,10 +20,7 @@ namespace VismaE2interRPWDWEDN.Pages.Ansatte
         }
 
         public Ansatt Ansatt { get; set; }
-        public Stilling Stilling { get; set; }
 
-        public Stilling PositionStartDate { get; set; }
-        public Stilling PositionEndDate { get; set; }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -37,15 +34,6 @@ namespace VismaE2interRPWDWEDN.Pages.Ansatte
             {
                 return NotFound();
             }
-
-           Stilling = await _context.Stilling.FirstOrDefaultAsync(s => s.ID == id);
-     //      PositionStartDate = await _context.Stilling.FirstOrDefaultAsync(a => a.PositionStartDate == s.ID);
-            /*
-            if (Stilling == null)
-            {
-                return NotFound();
-            }
-            */
             return Page();
         }
     }

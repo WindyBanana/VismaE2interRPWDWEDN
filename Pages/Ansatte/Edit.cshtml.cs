@@ -22,8 +22,6 @@ namespace VismaE2interRPWDWEDN.Pages.Ansatte
 
         [BindProperty]
         public Ansatt Ansatt { get; set; }
-        public SelectList Stillinger { get; set; }
-        public SelectList Oppgaver { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,16 +29,6 @@ namespace VismaE2interRPWDWEDN.Pages.Ansatte
             {
                 return NotFound();
             }
-
-            IQueryable<string> stillingQuery = from s in _context.Stilling
-                                               orderby s.Name
-                                               select s.Name;
-            Stillinger = new SelectList(await stillingQuery.ToListAsync());
-
-            IQueryable<string> oppgaveQuery = from o in _context.Oppgave
-                                               orderby o.Oppgavetittel
-                                               select o.Oppgavetittel;
-            Oppgaver = new SelectList(await oppgaveQuery.ToListAsync());
 
             Ansatt = await _context.Ansatt.FirstOrDefaultAsync(m => m.ID == id);
 

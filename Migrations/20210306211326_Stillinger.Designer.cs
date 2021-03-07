@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VismaE2interRPWDWEDN.Data;
 
 namespace VismaE2interRPWDWEDN.Migrations
 {
     [DbContext(typeof(VismaE2interRPWDWEDNContext))]
-    partial class VismaE2interRPWDWEDNContextModelSnapshot : ModelSnapshot
+    [Migration("20210306211326_Stillinger")]
+    partial class Stillinger
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,39 +31,9 @@ namespace VismaE2interRPWDWEDN.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Oppgave")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Stilling")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("ID");
 
                     b.ToTable("Ansatt");
-                });
-
-            modelBuilder.Entity("VismaE2interRPWDWEDN.Models.Oppgave", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Ansatt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("OppgaveDato")
-                        .HasColumnType("Date");
-
-                    b.Property<string>("Oppgavetittel")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Stilling")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Oppgave");
                 });
 
             modelBuilder.Entity("VismaE2interRPWDWEDN.Models.Stilling", b =>
@@ -70,9 +42,6 @@ namespace VismaE2interRPWDWEDN.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Ansatt")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
