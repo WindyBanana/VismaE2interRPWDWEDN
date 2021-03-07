@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using VismaE2interRPWDWEDN.Data;
 using VismaE2interRPWDWEDN.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace VismaE2interRPWDWEDN.Pages.Ansatte
 {
@@ -19,13 +20,27 @@ namespace VismaE2interRPWDWEDN.Pages.Ansatte
             _context = context;
         }
 
-        public IList<Ansatt> Ansatt { get;set; }
+        public IList<Ansatt> Ansatt { get; set; }
+        public IList<Ansatt> AnsattSearch { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
 
 
 
         public async Task OnGetAsync()
         {
-            Ansatt = await _context.Ansatt.ToListAsync();
+            Ansatt = await _context.Ansatt.AsNoTracking().ToListAsync();
+
+            var ansatt = from a in _context.Ansatt
+                             select a;
+          
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                ansatt = ansatt.Where(s => s.Name.Contains(SearchString));
+            } 
+
+            AnsattSearch = await ansatt.ToListAsync();
 
         }
     }
